@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="file"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .form-group input[type="file"] {
+            padding: 5px;
+        }
+
+        .form-submit {
+            text-align: center;
+        }
+
+        .form-submit button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-submit button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Custom Form</h2>
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <!-- Gender -->
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+        <!-- Comments -->
+        <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" placeholder="Write your comments here..."></textarea>
+        </div>
+        
+        <!-- Image Upload -->
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="form-submit">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
